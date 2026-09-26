@@ -8,6 +8,7 @@
 #!.yarn/cache
 .pnp.*
 node_modules/
+.trae
 
 # VitePress
 docs/.vitepress/dist
@@ -16,3 +17,7 @@ docs/.vitepress/cache
 # OS-Specified
 desktop.ini
 .DS_Store
+
+# Credentials
+*.git-credentials
+*.git-credentials.lock

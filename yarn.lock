@@ -932,9 +932,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"HugoAura-Docs@workspace:.":
+"HugoAura-Enhanced-Docs@workspace:.":
   version: 0.0.0-use.local
-  resolution: "HugoAura-Docs@workspace:."
+  resolution: "HugoAura-Enhanced-Docs@workspace:."
   dependencies:
     "@css-render/vue3-ssr": "npm:^0.15.14"
     "@types/node": "npm:^24.10.1"

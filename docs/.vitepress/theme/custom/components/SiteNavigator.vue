@@ -66,7 +66,7 @@ const dropDownOptions = [
   {
     label: `{
         "title": "HugoAura-Main 文档站",
-        "desc": "关于 HugoAura 主模块 (Electron 端注入) 的相关文档、使用方法。<br/>HugoAura-Main 主要负责管家前端逻辑篡改等业务, 实现绕过密码<br/>验证、自定义屏幕锁激活码等纯前端行为。",
+        "desc": "关于 HugoAura-Enhanced 主模块 (Electron 端注入) 的相关文档、使用方法。<br/>HugoAura-Main 主要负责管家前端逻辑篡改等业务, 实现绕过密码<br/>验证、自定义屏幕锁激活码等纯前端行为。",
         "isSelf": true,
         "link": "javascript:;",
         "iconUrl": "/static/img/nav/Aura_Main.png"
@@ -76,13 +76,13 @@ const dropDownOptions = [
   },
   {
     label: `{
-        "title": "HugoAura-Aikari 文档站",
-        "desc": "关于 HugoAura Aikari 的相关文档、使用方法。<br/>HugoAura-Aikari 负责 MQTT 流量中继 (集控服务器消息篡改 / 拦<br/>截)、扩展冰点穿透、希沃账号自动登录等。",
+        "title": "HugoAura-Aikari-Next 文档站",
+        "desc": "关于 HugoAura-Enhanced Aikari-Next 的相关文档、使用方法。<br/>HugoAura-Aikari-Next 负责 MQTT 流量中继 (集控服务器消息篡改 / 拦<br/>截)、扩展冰点穿透、希沃账号自动登录等。",
         "isSelf": false,
         "link": "javascript:;",
         "iconUrl": "/static/img/nav/Aikari.png"
       }`,
-    key: "HugoAura-Aikari",
+    key: "HugoAura-Aikari-Next",
     disabled: true,
   },
   {

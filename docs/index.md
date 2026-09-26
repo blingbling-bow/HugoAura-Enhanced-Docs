@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "HugoAura"
+  name: "HugoAura-Enhanced"
   text: ""
   tagline: Next era of Seewo Hugo tricking
   image:
@@ -10,7 +10,7 @@ hero:
     dark: /static/img/home/Project_HugoAura_Logo_white.svg
   actions:
     - theme: brand
-      text: 了解 HugoAura
+      text: 了解 HugoAura-Enhanced
       link: /userGuide/introduction
     - theme: alt
       text: 快速开始
@@ -34,7 +34,7 @@ features:
     details: 通过 Aikari-PLS 流量过滤实现的窥屏提醒与远程操作拦截能力 ¹, 让电教主任与老师的阴暗面无处遁形
 ---
 
-<p class="aft-comments">¹ 此功能目前仍在开发中 (WIP), 请等待后续 Aikari 更新发布</p>
+<p class="aft-comments">¹ 此功能目前仍在开发中 (WIP), 请等待后续 Aikari-Next 更新发布</p>
 
 <style src="./assets/index.css"></style>
 

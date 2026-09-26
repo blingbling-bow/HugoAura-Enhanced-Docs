@@ -8,7 +8,7 @@ const fileAndStyles: Record<string, string> = {};
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "HugoAura Docs",
+  title: "HugoAura-Enhanced Docs",
   description: "Next era of Seewo Hugo tricking",
   cleanUrls: true,
   // ▽ Begin of config for Vitepress Default Theme

@@ -41,14 +41,17 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
     <li>
       以下下载源中的<b>任意一个</b>:
       <ol>
-        <li><a href="https://gh.llkk.cc">gh.llkk.cc</a></li>
-        <li><a href="https://gitproxy.127731.xyz">gitproxy.127731.xyz</a></li>
-        <li><a href="https://bgithub.xyz">bgithub.xyz</a></li>
-        <li><a href="https://github.dpik.top">github.dpik.top</a></li>
-        <li><a href="https://gh.catmak.name">gh.catmak.name</a></li>
-        <li><a href="https://ghfast.top">ghfast.top</a></li>
-        <li><a href="https://ghproxy.net">ghproxy.net</a></li>
-        <li><a href="https://github.tbedu.top">github.tbedu.top</a></li>
+        <li><a href="https://git.yylx.win">git.yylx.win</a></li>
+        <li><a href="https://github.chenc.dev">github.chenc.dev</a></li>
+        <li><a href="https://gh.07150721.xyz">gh.07150721.xyz</a></li>
+        <li><a href="https://cdn.gh-proxy.org">cdn.gh-proxy.org</a></li>
+        <li><a href="https://axisnow.gh-proxy.org">axisnow.gh-proxy.org</a></li>
+        <li><a href="https://gh-proxy.org">gh-proxy.org</a></li>
+        <li><a href="https://githubdog.com">githubdog.com</a></li>
+        <li><a href="https://js.jiangss.shop">js.jiangss.shop</a></li>
+        <li><a href="https://gh.927223.xyz">gh.927223.xyz</a></li>
+        <li><a href="https://ghproxy.felicity.land">ghproxy.felicity.land</a></li>
+        <li><a href="https://github.tbap.top">github.tbap.top</a></li>
         <li><a href="https://github.com">github.com</a></li>
       </ol>
     </li>
@@ -72,7 +75,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
   <template #icon>
     <ErrorCircle24Regular />
   </template>
-  受注入技术限制, HugoAura-Main 始终仅对最新版本的希沃管家提供支持, 如果您尝试在旧版本管家上安装 HugoAura, 可能会引发崩溃或功能失效等问题。<br />
+  受注入技术限制, HugoAura-Main 始终仅对最新版本的希沃管家提供支持, 如果您尝试在旧版本管家上安装 HugoAura-Enhanced, 可能会引发崩溃或功能失效等问题。<br />
   我们不受理来自旧版管家的 Issues。
 </ClientOnlyNAlert>
 
@@ -92,7 +95,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 
 ### 下载安装器文件 {#with-network-download-installer-package}
 
-如果网络情况允许, 推荐您通过 [GitHub Releases](https://github.com/HugoAura/HugoAura-Install/releases) 下载安装器文件。
+如果网络情况允许, 推荐您通过 [GitHub Releases](https://github.com/blingbling-bow/HugoAura-Enhanced-Install/releases) 下载安装器文件。
 
 一般选择最新的 Release 即可。
 
@@ -101,7 +104,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
     <QuestionCircle24Regular />
   </template>
   在 Windows 7 设备上使用一键安装可能需要特殊处理。接下来的每个步骤, 文档都会提供针对 Windows 7 设备的操作方案。请留意。<br />
-  <b>我们强烈建议您尽快更新 Windows 版本, Windows 7 是完全 EOL 的 Windows 发行, HugoAura 不对任何 Win 7 设备上遇到的特化 Bug 进行处理。</b>
+  <b>我们强烈建议您尽快更新 Windows 版本, Windows 7 是完全 EOL 的 Windows 发行, HugoAura-Enhanced 不对任何 Win 7 设备上遇到的特化 Bug 进行处理。</b>
   <br />
   <br />
   针对本步骤, 在下载文件时, <b>请下载带有 <code>py3-8</code> 字样的 EXE 包</b>。Windows 7 无法运行 Python 3.10 的构建产物。
@@ -111,9 +114,8 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 
 | 下载渠道 |                                下载链接                                |     最新版本     |
 | :------: | :--------------------------------------------------------------------: | :--------------: |
-|  GitHub  |     [链接](https://github.com/HugoAura/HugoAura-Install/releases)      |    `始终最新`    |
-| 123 云盘 | [链接 (提取码: aura)](https://www.123865.com/s/0KJ9jv-7V4Md?pwd=aura#) | `v0.0.3-beta-II` |
-|  蓝奏云  |      [链接 (提取码: cmba)](https://stdout.lanzout.com/b002vi0ikb)      | `v0.0.3-beta-II` |
+|  GitHub  |     [链接](https://github.com/blingbling-bow/HugoAura-Enhanced-Install/releases)      |    `始终最新`    |
+|  蓝奏云  |      [链接 (提取码: cmba)](https://openapi.lanzout.com/ivpbH44ce7he)      | `v0.0.4-beta-I` |
 
 ### 运行安装器 {#with-network-run-installer-package}
 
@@ -168,7 +170,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 
 此时, 请手动双击桌面上的管家图标, 以打开希沃管家前端窗口。
 
-接下来请跟随下图图示找到 HugoAura 设置入口:
+接下来请跟随下图图示找到 HugoAura-Enhanced 设置入口:
 
 <AutoDarkImage :zoom="true" :light="`${imgPathBaseline}/SSADone_WithBg.png`" :dark="`${imgPathBaseline}/SSADone_Transparent.png`" />
 
@@ -215,7 +217,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 2. 在命令行中输入该版本号左侧的数字 **(注: 不要带 `[` 或 `]`, 仅输入纯阿拉伯数字)** <span class="opacity-50">(如果班级内没有键盘, 请使用软键盘, 聚焦到 CMD 窗口后, 点击软键盘上的相应按键) (如果您不知道如何开启软键盘, 请[上网搜索](https://www.bing.com/search?q=Windows+7+%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E8%BD%AF%E9%94%AE%E7%9B%98&PC=U316&FORM=&rdr=1&rdrig=1))</span>
 3. 按下键盘上的回车
 
-回车提交后, HugoAura 将自动完成文件下载、ASAR 修补等操作。
+回车提交后, HugoAura-Enhanced 将自动完成文件下载、ASAR 修补等操作。
 
 当您看到下图输出时, 安装即为完成。
 
@@ -223,7 +225,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 
 此时, 请手动双击桌面上的管家图标, 以打开希沃管家前端窗口。
 
-接下来请跟随下图图示找到 HugoAura 设置入口:
+接下来请跟随下图图示找到 HugoAura-Enhanced 设置入口:
 
 <AutoDarkImage :zoom="true" :light="`${imgPathBaseline}/SSADone_WithBg.png`" :dark="`${imgPathBaseline}/SSADone_Transparent.png`" />
 
@@ -241,7 +243,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
   <template #icon>
     <QuestionCircle24Regular />
   </template>
-  这段教程正在编写进程中, 请您优先尝试其他安装方式, 或直接根据 <a href="https://github.com/HugoAura/HugoAura-Install">HugoAura-Install README</a> 中的命令提示进行操作。
+  这段教程正在编写进程中, 请您优先尝试其他安装方式, 或直接根据 <a href="https://github.com/blingbling-bow/HugoAura-Enhanced-Install">HugoAura-Install README</a> 中的命令提示进行操作。
 </ClientOnlyNAlert>
 
 ## 离线安装 {#without-network}
@@ -260,11 +262,11 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 
 请跟随 [联网安装中安装器的下载步骤](#with-network-download-installer-package) 下载 HugoAura Install 安装器, 然后将文件 (`AuraInstaller-XXX.exe`) 复制到您的可移动介质中。
 
-#### 下载 HugoAura Releases 源码包 {#without-network-download-res-src}
+#### 下载 HugoAura-Enhanced Releases 源码包 {#without-network-download-res-src}
 
-请前往 [HugoAura-Main Releases](https://github.com/HugoAura/Seewo-HugoAura/releases) 下载您喜欢的版本所对应的源码包 (`aura.zip` 和 `core.zip`)。
+请前往 [HugoAura-Main Releases](https://github.com/blingbling-bow/HugoAura-Enhanced/releases) 下载您喜欢的版本所对应的源码包 (`aura.zip` 和 `core.zip`)。
 
-我们优先建议您下载 [CI 版](https://github.com/HugoAura/Seewo-HugoAura/releases/tag/vAutoBuild) 的源码包。与一般软件不同, HugoAura-Main 的稳定版不一定能非常良好地兼容最新版管家。具体请详见每个 Release Description 区域的「版本对齐信息」。
+我们优先建议您下载 [CI 版](https://github.com/blingbling-bow/HugoAura-Enhanced/releases/tag/vAutoBuild) 的源码包。与一般软件不同, HugoAura-Main 的稳定版不一定能非常良好地兼容最新版管家。具体请详见每个 Release Description 区域的「版本对齐信息」。
 
 参见下图进行下载操作:
 
@@ -340,7 +342,7 @@ C:\Users\seewo\Downloads
 
 等待安装器完成安装后, 手动双击桌面上的管家图标, 以打开希沃管家前端窗口。
 
-接下来请跟随下图图示找到 HugoAura 设置入口:
+接下来请跟随下图图示找到 HugoAura-Enhanced 设置入口:
 
 <AutoDarkImage :zoom="true" :light="`${imgPathBaseline}/SSADone_WithBg.png`" :dark="`${imgPathBaseline}/SSADone_Transparent.png`" />
 
@@ -367,5 +369,5 @@ C:\Users\seewo\Downloads
   <template #icon>
     <QuestionCircle24Regular />
   </template>
-  这段教程正在编写进程中, 如果您有急需开发者解答的安装问题, 可前往 <a href="https://github.com/HugoAura/HugoAura-Install/issues">HugoAura-Install Issues</a> 进行反馈。您的案例会被添加到本区域。
+  这段教程正在编写进程中, 如果您有急需开发者解答的安装问题, 可前往 <a href="https://github.com/blingbling-bow/HugoAura-Enhanced-Install/issues">HugoAura-Install Issues</a> 进行反馈。您的案例会被添加到本区域。
 </ClientOnlyNAlert>

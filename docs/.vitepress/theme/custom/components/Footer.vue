@@ -10,13 +10,13 @@ const { isDark } = useData();
     <p style="margin-top: 0.25rem">
       Powered by <a href="https://vitepress.dev/">VitePress</a>
     </p>
-    <p>Copyright © 2025, HugoAura Developers</p>
+    <p>Copyright © 2025, HugoAura-Enhanced Developers</p>
     <p>
-      HugoAura is licensed under
+      HugoAura-Enhanced is licensed under
       <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL-v3.0</a>
     </p>
     <p>
-      HugoAura Docs is licensed under
+      HugoAura-Enhanced Docs is licensed under
       <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
     </p>
   </div>

@@ -1,8 +1,8 @@
-# HugoAura-Docs
+# HugoAura-Enhanced Docs
 
-这是 [HugoAura-Main](https://github.com/HugoAura/Seewo-HugoAura) 的文档站。
+这是 [HugoAura-Enhanced](https://github.com/blingbling-bow/HugoAura-Enhanced) 的文档站。
 
-**在线访问:** [HugoAura Docs](https://docs.aurax.cc/)
+**在线访问:** [HugoAura-Enhanced Docs](https://hugoaura.pages.dev/)
 
 ## ⚖ 许可
 
