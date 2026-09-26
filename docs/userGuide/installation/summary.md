@@ -21,7 +21,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation");
 
 ## 即将开始... {#we-re-starting}
 
-HugoAura-Main 支持多种安装方式, 请选择一种您偏好的方式:
+HugoAura-Enhanced-Main 支持多种安装方式, 请选择一种您偏好的方式:
 
 - [一键安装](/userGuide/installation/autoInstall)
 

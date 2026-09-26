@@ -75,7 +75,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
   <template #icon>
     <ErrorCircle24Regular />
   </template>
-  受注入技术限制, HugoAura-Main 始终仅对最新版本的希沃管家提供支持, 如果您尝试在旧版本管家上安装 HugoAura-Enhanced, 可能会引发崩溃或功能失效等问题。<br />
+  受注入技术限制, HugoAura-Enhanced-Main 始终仅对最新版本的希沃管家提供支持, 如果您尝试在旧版本管家上安装 HugoAura-Enhanced, 可能会引发崩溃或功能失效等问题。<br />
   我们不受理来自旧版管家的 Issues。
 </ClientOnlyNAlert>
 
@@ -144,7 +144,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 
 ##### 使用 GUI 安装器 {#with-network-using-installer-gui-install}
 
-针对 Windows 10+ 用户, HugoAura Install 提供了友好的图形化界面供您执行操作。
+针对 Windows 10+ 用户, HugoAura-Enhanced-Install 提供了友好的图形化界面供您执行操作。
 
 <AutoDarkImage :zoom="true" :light="`${imgPathBaseline}/InstallerUI_WithBg.png`" :dark="`${imgPathBaseline}/InstallerUI_Transparent.png`" />
 
@@ -152,7 +152,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 
 请按如下步骤完成安装:
 
-1. 在「版本类型选择区域」, 选择一个合适的版本类型 <span class="opacity-50">(一般推荐使用 CI 版, 与一般软件不同, HugoAura-Main 的稳定版 (发行版) 不一定能良好兼容最新版管家)</span>
+1. 在「版本类型选择区域」, 选择一个合适的版本类型 <span class="opacity-50">(一般推荐使用 CI 版, 与一般软件不同, HugoAura-Enhanced-Main 的稳定版 (发行版) 不一定能良好兼容最新版管家)</span>
 2. 在「版本号选择区域」选择最新版本 <span class="opacity-50">(一般无需修改, 最顶上第一个即为最新版)</span>
 3. 正常情况下, <b>无需</b>填写 "安装路径设置" 的信息。直接在底部操作按钮区域点击 "<b>开始安装</b>" 即可。
 
@@ -178,7 +178,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
   <template #icon>
     <CheckmarkCircle24Regular />
   </template>
-  祝贺您完成了 <code>HugoAura-Main</code> 的安装流程。<br />
+  祝贺您完成了 <code>HugoAura-Enhanced-Main</code> 的安装流程。<br />
   如果您在前面的任一步骤中遇到了问题, 请参阅 <a href="#faq">FAQ</a>。
 </ClientOnlyNAlert>
 
@@ -213,7 +213,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 
 <AutoDarkImage :zoom="true" :light="`${imgPathBaseline}/CLIInteractiveUsage_WithBg.png`" :dark="`${imgPathBaseline}/CLIInteractiveUsage_Transparent.png`" />
 
-1. 选择您希望安装的版本号 <span class="opacity-50">(一般推荐使用 CI 版, 与一般软件不同, HugoAura-Main 的稳定版 (发行版) 不一定能良好兼容最新版管家)</span>
+1. 选择您希望安装的版本号 <span class="opacity-50">(一般推荐使用 CI 版, 与一般软件不同, HugoAura-Enhanced-Main 的稳定版 (发行版) 不一定能良好兼容最新版管家)</span>
 2. 在命令行中输入该版本号左侧的数字 **(注: 不要带 `[` 或 `]`, 仅输入纯阿拉伯数字)** <span class="opacity-50">(如果班级内没有键盘, 请使用软键盘, 聚焦到 CMD 窗口后, 点击软键盘上的相应按键) (如果您不知道如何开启软键盘, 请[上网搜索](https://www.bing.com/search?q=Windows+7+%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E8%BD%AF%E9%94%AE%E7%9B%98&PC=U316&FORM=&rdr=1&rdrig=1))</span>
 3. 按下键盘上的回车
 
@@ -233,7 +233,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
   <template #icon>
     <CheckmarkCircle24Regular />
   </template>
-  祝贺您完成了 <code>HugoAura-Main</code> 的安装流程。<br />
+  祝贺您完成了 <code>HugoAura-Enhanced-Main</code> 的安装流程。<br />
   如果您在前面的任一步骤中遇到了问题, 请参阅 <a href="#faq">FAQ</a>。
 </ClientOnlyNAlert>
 
@@ -243,7 +243,7 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
   <template #icon>
     <QuestionCircle24Regular />
   </template>
-  这段教程正在编写进程中, 请您优先尝试其他安装方式, 或直接根据 <a href="https://github.com/blingbling-bow/HugoAura-Enhanced-Install">HugoAura-Install README</a> 中的命令提示进行操作。
+  这段教程正在编写进程中, 请您优先尝试其他安装方式, 或直接根据 <a href="https://github.com/blingbling-bow/HugoAura-Enhanced-Install">HugoAura-Enhanced-Install README</a> 中的命令提示进行操作。
 </ClientOnlyNAlert>
 
 ## 离线安装 {#without-network}
@@ -258,15 +258,15 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 
 请跟随 [联网安装中的管家下载步骤](#with-network-update-to-latest-seewo-services) 下载希沃管家安装包, 然后将安装包 (`SeewoServiceSetup_vX.X.X.exe`) 复制到您的可移动介质中。
 
-#### 下载 HugoAura Install 安装器 {#without-network-download-res-installer}
+#### 下载 HugoAura-Enhanced-Install 安装器 {#without-network-download-res-installer}
 
-请跟随 [联网安装中安装器的下载步骤](#with-network-download-installer-package) 下载 HugoAura Install 安装器, 然后将文件 (`AuraInstaller-XXX.exe`) 复制到您的可移动介质中。
+请跟随 [联网安装中安装器的下载步骤](#with-network-download-installer-package) 下载 HugoAura-Enhanced-Install 安装器, 然后将文件 (`AuraInstaller-XXX.exe`) 复制到您的可移动介质中。
 
 #### 下载 HugoAura-Enhanced Releases 源码包 {#without-network-download-res-src}
 
-请前往 [HugoAura-Main Releases](https://github.com/blingbling-bow/HugoAura-Enhanced/releases) 下载您喜欢的版本所对应的源码包 (`aura.zip` 和 `core.zip`)。
+请前往 [HugoAura-Enhanced Releases](https://github.com/blingbling-bow/HugoAura-Enhanced/releases) 下载您喜欢的版本所对应的源码包 (`aura.zip` 和 `core.zip`)。
 
-我们优先建议您下载 [CI 版](https://github.com/blingbling-bow/HugoAura-Enhanced/releases/tag/vAutoBuild) 的源码包。与一般软件不同, HugoAura-Main 的稳定版不一定能非常良好地兼容最新版管家。具体请详见每个 Release Description 区域的「版本对齐信息」。
+我们优先建议您下载 [CI 版](https://github.com/blingbling-bow/HugoAura-Enhanced/releases/tag/vAutoBuild) 的源码包。与一般软件不同, HugoAura-Enhanced-Main 的稳定版不一定能非常良好地兼容最新版管家。具体请详见每个 Release Description 区域的「版本对齐信息」。
 
 参见下图进行下载操作:
 
@@ -317,7 +317,7 @@ C:\Users\seewo\Downloads
 
 ##### 使用图形界面进行离线安装 <Badge type="tip" text="Windows 10+" /> {#without-network-go-inst-run-installer-with-gui}
 
-双击启动 HugoAura Install 安装器的 EXE。如果您遇到了 SmartScreen 警告弹窗, 请参见 [解决 SmartScreen 警告](#with-network-using-installer-smart-screen)。如果您遇到了 UAC 提示框, 请点击 "是"。
+双击启动 HugoAura-Enhanced-Install 安装器的 EXE。如果您遇到了 SmartScreen 警告弹窗, 请参见 [解决 SmartScreen 警告](#with-network-using-installer-smart-screen)。如果您遇到了 UAC 提示框, 请点击 "是"。
 
 接下来, 如下图所示:
 
@@ -350,7 +350,7 @@ C:\Users\seewo\Downloads
   <template #icon>
     <CheckmarkCircle24Regular />
   </template>
-  祝贺您完成了 <code>HugoAura-Main</code> 的安装流程。<br />
+  祝贺您完成了 <code>HugoAura-Enhanced-Main</code> 的安装流程。<br />
   如果您在前面的任一步骤中遇到了问题, 请参阅 <a href="#faq">FAQ</a>。
 </ClientOnlyNAlert>
 
@@ -369,5 +369,5 @@ C:\Users\seewo\Downloads
   <template #icon>
     <QuestionCircle24Regular />
   </template>
-  这段教程正在编写进程中, 如果您有急需开发者解答的安装问题, 可前往 <a href="https://github.com/blingbling-bow/HugoAura-Enhanced-Install/issues">HugoAura-Install Issues</a> 进行反馈。您的案例会被添加到本区域。
+  这段教程正在编写进程中, 如果您有急需开发者解答的安装问题, 可前往 <a href="https://github.com/blingbling-bow/HugoAura-Enhanced-Install/issues">HugoAura-Enhanced-Install Issues</a> 进行反馈。您的案例会被添加到本区域。
 </ClientOnlyNAlert>

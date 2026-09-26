@@ -44,7 +44,7 @@ const imgPathBaseline = ref("/static/img/userGuide/introduction");
 
 <AutoDarkImage :zoom="true" :light="`${imgPathBaseline}/ProductLine_WithBg.png`" :dark="`${imgPathBaseline}/ProductLine_Transparent.png`" />
 
-- **HugoAura-Main** | 希沃管家的 Electron 前端侧 Hook。简而言之, 它负责篡改你从桌面双击 "希沃管家" 快捷方式之后, 弹出的那个窗口的行为。
+- **HugoAura-Enhanced-Main** | 希沃管家的 Electron 前端侧 Hook。简而言之, 它负责篡改你从桌面双击 "希沃管家" 快捷方式之后, 弹出的那个窗口的行为。
 - **HugoAura-Aikari-Next** | 希沃易 + 的全面体验调整工具。其主要模块 PLS 专注于篡改集控端服务器与本地管家后台服务的通信数据, 从而实现更全面的活动监控与欺骗。其余模块可帮助用户提升其他希沃软件的使用时体验。
 
 <ClientOnlyNAlert title="关于二者的关系" type="info">

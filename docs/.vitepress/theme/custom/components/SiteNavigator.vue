@@ -65,13 +65,13 @@ const renderDropDownLabels = (option: DropdownOption) => {
 const dropDownOptions = [
   {
     label: `{
-        "title": "HugoAura-Main 文档站",
-        "desc": "关于 HugoAura-Enhanced 主模块 (Electron 端注入) 的相关文档、使用方法。<br/>HugoAura-Main 主要负责管家前端逻辑篡改等业务, 实现绕过密码<br/>验证、自定义屏幕锁激活码等纯前端行为。",
+        "title": "HugoAura-Enhanced-Main 文档站",
+        "desc": "关于 HugoAura-Enhanced 主模块 (Electron 端注入) 的相关文档、使用方法。<br/>HugoAura-Enhanced-Main 主要负责管家前端逻辑篡改等业务, 实现绕过密码<br/>验证、自定义屏幕锁激活码等纯前端行为。",
         "isSelf": true,
-        "link": "javascript:;",
-        "iconUrl": "/static/img/nav/Aura_Main.png"
+        "link": "/userGuide/introduction",
+        "iconUrl": "/static/img/nav/Main.png"
       }`,
-    key: "HugoAura-Main",
+    key: "HugoAura-Enhanced-Main",
     disabled: false,
   },
   {
