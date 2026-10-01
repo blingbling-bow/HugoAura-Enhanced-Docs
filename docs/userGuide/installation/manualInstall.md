@@ -5,6 +5,8 @@ editLink: true
 
 <script setup>
 import { Info24Regular, QuestionCircle24Regular, ErrorCircle24Regular } from '@vicons/fluent';
+import { ref } from 'vue';
+const imgPathBaseline = ref("/static/img/userGuide/installation/manualInstallation");
 </script>
 
 # 手动安装 {#title}
@@ -14,6 +16,8 @@ import { Info24Regular, QuestionCircle24Regular, ErrorCircle24Regular } from '@v
   <template #est-time>20 ~ 40 分钟</template>
   <template #difficulty>进阶</template>
 </DocProp>
+
+<AutoDarkImage :zoom="false" :light="`${imgPathBaseline}/Banner_WithBg.png`" :dark="`${imgPathBaseline}/Banner_Transparent.png`" />
 
 <ClientOnlyNAlert title="建议先看完这一段再决定" type="warning">
   <template #icon>

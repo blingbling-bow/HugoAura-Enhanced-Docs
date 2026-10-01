@@ -239,11 +239,180 @@ const imgPathBaseline = ref("/static/img/userGuide/installation/autoInstallation
 
 #### 通过非交互式 CLI 安装 <Badge type="tip" text="Any Version" /> {#with-network-using-installer-cli-start}
 
-<ClientOnlyNAlert title="本段教程尚未完工" type="warning">
+非交互式 CLI 面向 **脚本化 / 批量部署** 场景: 启动后不询问任何问题, 全程按参数执行, 并以 **退出代码** 反馈结果 (见 [判断安装结果](#with-network-using-installer-cli-exit-code))。
+
+最快上手 (在 **管理员终端** 中执行, 安装最新自动构建版):
+
+```powershell
+AuraInstaller.exe --cli --ci -y
+```
+
+##### 前置条件 {#with-network-using-installer-cli-prerequisites}
+
+1. **必须以管理员身份运行终端。** 安装器需要写入希沃管家的 `resources` 目录, 并卸载希沃的文件系统过滤驱动 (`SeewoKeLiteLady`)。
+
+<ClientOnlyNAlert title="务必使用管理员终端, 否则退出代码无意义" type="warning">
+  <template #icon>
+    <ErrorCircle24Regular />
+  </template>
+  如果在<b>普通 (非管理员)</b> 终端中启动, 安装器会先弹出 UAC 请求提权, 而<b>原进程会立即退出并返回 <code>0</code></b> —— 真正的安装在提权后的新进程中执行, 终端既拿不到它的退出代码, 也看不到它的输出。若再叠加 UAC 被拒绝的情况, 原进程同样返回 <code>0</code>。因此脚本化部署前请先确认终端已是管理员权限。
+</ClientOnlyNAlert>
+
+2. 目标设备 **已安装希沃管家**, 且其 `resources` 目录位于默认路径 (`C:\Program Files (x86)\Seewo\SeewoService\SeewoService_*\SeewoServiceAssistant\resources`)。若不在默认位置, 需用 `-d` 手动指定。
+3. 网络可访问 GitHub API (`api.github.com`) 与至少一个下载镜像; 或者提前准备好本地资源包, 用 `-p` 离线安装。
+
+##### 参数一览 {#with-network-using-installer-cli-params}
+
+| 参数 | 必填 | 说明 |
+| --- | --- | --- |
+| `--cli` | 是 | 以 CLI (无 GUI) 模式启动。**不带此参数时, 其余参数一律被忽略并直接打开图形界面** |
+| `-y, --yes` | 是 | 非交互模式, 自动确认所有操作。缺少它时程序会在部分环节等待键盘输入 |
+| `--ci` | 二选一 | 安装最新自动构建版 (CI) |
+| `-l, --latest` | 二选一 | 安装最新稳定版 |
+| `--pre` | 二选一 | 安装最新预发行版 |
+| `-v, --version <TAG>` | 二选一 | 安装指定版本 Tag, 例如 `v0.2.0-rc2` |
+| `-p, --path <DIR>` | 二选一 | 使用本地资源包安装, `<DIR>` 为**文件夹**, 需同时包含 `aura.zip` 与 `core.zip` |
+| `-d, --dir <DIR>` | 否 | 手动指定希沃管家安装目录 (`resources` 路径), 目录必须已存在 |
+| `--dry-run` | 否 | 演练模式: 照常下载 / 解压 / 生成补丁, 但不写入管家目录, 并保留临时目录便于排查 |
+| `--list-exit-codes` | 否 | 打印退出代码释义后退出 (同样需要 `--cli`) |
+| `-h, --help` | 否 | 显示帮助信息 (同样需要 `--cli`) |
+
+<ClientOnlyNAlert title="版本参数互斥" type="info">
+  <template #icon>
+    <Info24Regular />
+  </template>
+  <ul>
+    <li><code>-v</code> / <code>-p</code> / <code>-l</code> / <code>--pre</code> / <code>--ci</code> 五者<b>互斥</b>, 同时给出多个会直接报参数错误 (退出代码 <code>7</code>)</li>
+    <li>一个都不给且带 <code>-y</code> 时, 默认安装<b>最新稳定版</b></li>
+    <li>一个都不给且不带 <code>-y</code> 时, 进入上一节的 <a href="#with-network-using-installer-cli-interactive-start">交互式菜单</a></li>
+  </ul>
+</ClientOnlyNAlert>
+
+<ClientOnlyNAlert title="推荐使用自动构建版" type="info">
+  <template #icon>
+    <Info24Regular />
+  </template>
+  与一般软件不同, HugoAura-Enhanced-Main 的稳定版不一定能良好兼容最新版管家, 因此命令行安装推荐直接用 <code>--ci</code>。
+</ClientOnlyNAlert>
+
+##### 常用示例 {#with-network-using-installer-cli-examples}
+
+```powershell
+# 安装最新自动构建版 (推荐)
+AuraInstaller.exe --cli --ci -y
+
+# 安装最新稳定版
+AuraInstaller.exe --cli -l -y
+
+# 安装最新预发行版
+AuraInstaller.exe --cli --pre -y
+
+# 安装指定版本
+AuraInstaller.exe --cli -v v0.2.0-rc2 -y
+
+# 使用本地资源包安装 (目录内需同时存在 aura.zip 与 core.zip)
+AuraInstaller.exe --cli -p "C:\Users\seewo\Downloads" -y
+
+# 手动指定管家安装目录
+AuraInstaller.exe --cli --ci -d "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.7.4010\SeewoServiceAssistant\resources" -y
+
+# 演练模式: 只下载 / 解压 / 生成补丁, 不实际写入, 用于排查网络问题
+AuraInstaller.exe --cli --ci --dry-run -y
+
+# 查看退出代码释义
+AuraInstaller.exe --cli --list-exit-codes
+```
+
+##### 脚本化调用 {#with-network-using-installer-cli-script}
+
+安装器是 **图形子系统程序**, 从 PowerShell 直接调用时可能不会等待它结束, `$LASTEXITCODE` 会读到上一次命令的残留值。脚本中请改用 `Start-Process -Wait -PassThru` 取真实退出代码:
+
+```powershell
+$exe = ".\AuraInstaller.exe"
+
+$proc = Start-Process -FilePath $exe `
+                     -ArgumentList "--cli", "--ci", "-y" `
+                     -Wait -PassThru
+
+switch ($proc.ExitCode) {
+    0 { Write-Host "安装成功" -ForegroundColor Green }
+    2 { Write-Host "权限不足, 请以管理员身份运行终端" -ForegroundColor Red }
+    3 { Write-Host "未找到希沃管家安装目录" -ForegroundColor Red }
+    4 { Write-Host "资源下载失败, 请检查网络或改用 -p 离线安装" -ForegroundColor Red }
+    7 { Write-Host "参数错误, 请检查命令行" -ForegroundColor Red }
+    default { Write-Host "安装失败 (退出代码 $($proc.ExitCode)), 详见 AuraInstaller.log" -ForegroundColor Red }
+}
+```
+
+##### 判断安装结果 {#with-network-using-installer-cli-exit-code}
+
+| 退出代码 | 含义 |
+| --- | --- |
+| `0` | 安装成功 |
+| `1` | 安装失败 (一般错误, 需查日志) |
+| `2` | 权限不足, 需要管理员权限 |
+| `3` | 未找到希沃管家安装目录 |
+| `4` | 资源文件下载失败 |
+| `5` | 资源文件解压失败 (预留) |
+| `6` | 文件系统操作失败 (预留) |
+| `7` | 参数错误 |
+
+<ClientOnlyNAlert title="关于退出代码的两点提醒" type="info">
   <template #icon>
     <QuestionCircle24Regular />
   </template>
-  这段教程正在编写进程中, 请您优先尝试其他安装方式, 或直接根据 <a href="https://github.com/blingbling-bow/HugoAura-Enhanced-Install">HugoAura-Enhanced-Install README</a> 中的命令提示进行操作。
+  <ul>
+    <li>在<b>非管理员终端</b>中启动时, 原进程会因提权而立即返回 <code>0</code>, 此时退出代码不能反映安装结果 —— 请确保终端已是管理员权限。</li>
+    <li><code>5</code> / <code>6</code> 为预留代码。目前解压失败、ASAR 修补失败、文件移动失败等内部错误统一返回 <code>1</code>, 需结合日志定位。</li>
+  </ul>
+</ClientOnlyNAlert>
+
+安装成功后, 还可以用注册表核对实际装入的版本:
+
+```powershell
+Get-ItemProperty HKCU:\SOFTWARE\HugoAura | Select-Object Version, InstallTime
+```
+
+`Version` 记录的是版本 Tag; 使用本地资源包安装时记为 `local`。`InstallTime` 为 ISO 格式的安装时间。
+
+##### 日志与排查 {#with-network-using-installer-cli-log}
+
+非交互模式下没有窗口输出, 排查问题请查看日志文件:
+
+| 位置 | 级别 | 说明 |
+| --- | --- | --- |
+| 安装器 EXE 同目录的 `AuraInstaller.log` | INFO | 主要排查入口, 单个文件上限 10 MB, 自动轮转, 保留 7 天 |
+| `%USERPROFILE%\hugoaura_installer.log` | DEBUG | 静默 (无控制台) 运行时的完整记录, 含下载细节 |
+
+安装过程分为 `[0 / 10]` 至 `[10 / 10]` 共 10 个阶段 (查找管家目录 → 选择版本 → 获取资源 → 解压 → 卸载过滤驱动 → 移动 Aura 目录 → 修补 ASAR → 结束管家进程 → 替换 ASAR → 写入注册表), 每个阶段都会写入日志, 便于快速定位卡在哪一步。
+
+<ClientOnlyNAlert title="用演练模式排查网络问题" type="info">
+  <template #icon>
+    <Info24Regular />
+  </template>
+  若怀疑是下载环节失败, 可加 <code>--dry-run</code> 运行: 它会完整走一遍下载、解压与补丁生成流程, 但<b>不写入管家目录</b>, 并把中间产物保留在 <code>%TEMP%\Aura-Install-Temp</code> 供检查。日志中会记录实际使用的下载源与实时速度。
+</ClientOnlyNAlert>
+
+##### 安装行为说明 {#with-network-using-installer-cli-behavior}
+
+- 安装前会持续结束 `SeewoServiceAssistant.exe` / `SeewoCore.exe` / `SeewoAbility.exe` 进程, 并执行 `fltmc unload SeewoKeLiteLady` 卸载希沃的文件系统过滤驱动。
+- **首次安装**: 会把原始的 `app.asar` 备份为 `app.asar.bak`, 置空 `Verify.json` 校验数据, 再替换 `app.asar`。
+- **升级安装** (管家 `resources\aura` 目录已存在): 清理旧的 `aura` 目录, 并 **以 `app.asar.bak` 作为补丁输入** (因为现有的 `app.asar` 已被打过补丁, 不能重复作为补丁基准)。
+- 若升级时找不到 `app.asar.bak`, 安装器会 **跳过 ASAR 补丁, 仅更新 Aura 资源文件**, 此时仍返回退出代码 `0`。如需完整安装, 请将当前的 `app.asar` 复制一份为 `app.asar.bak`, 或清空 `resources\aura\` 目录后重新安装。
+
+##### 常见失败原因 {#with-network-using-installer-cli-troubleshooting}
+
+<ClientOnlyNAlert title="按退出代码对照排查" type="info">
+  <template #icon>
+    <QuestionCircle24Regular />
+  </template>
+  <ul>
+    <li><b>3</b>: 未安装希沃管家, 或安装路径不在默认位置 —— 用 <code>-d</code> 手动指定 <code>resources</code> 目录</li>
+    <li><b>4</b>: 无法访问 GitHub API, 或所有下载源均不可达; 也可能是 <code>-p</code> 指定的文件夹内缺少 <code>aura.zip</code> / <code>core.zip</code>。可先用 <code>--dry-run</code> 复现, 或改为离线安装</li>
+    <li><b>7</b>: 参数错误, 常见于给 <code>-p</code> 传了 zip 文件而不是所在文件夹、<code>-d</code> 指定的目录不存在、同时指定了多个互斥的版本参数</li>
+    <li><b>1</b>: 内部错误 (解压 / ASAR 修补 / 文件替换等), 具体原因见 <code>AuraInstaller.log</code></li>
+    <li><b>2</b>: 未以管理员身份运行, 请右键终端选择 "以管理员身份运行"</li>
+  </ul>
 </ClientOnlyNAlert>
 
 ## 离线安装 {#without-network}
